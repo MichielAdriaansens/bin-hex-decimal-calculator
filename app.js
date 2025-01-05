@@ -12,4 +12,4 @@ process.stdout.on('data', (rawData) => {
 process.stdout.write(`\nHello human 🤖 
 Convert binary or hexadecimal to a decimal number..
 Type or paste a binary/hexadecimal number and press Enter.
-Ctrl + C to exit.\n\n`);
+Ctrl + C to exit (or type q and press enter).\n\n>`);

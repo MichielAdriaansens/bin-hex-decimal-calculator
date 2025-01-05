@@ -11,7 +11,7 @@ settings.js changes the formula in calculator.js to binairy mode or hexadecimal 
 
 # install
 
-(nodeJs is required)
+nodeJs is required or docker *see docker section below.
 
 clone repository from github.
 
@@ -22,7 +22,16 @@ clone repository from github.
 3. type a binairy or hexadecimal number in terminal and press enter
 4. the decimal value gets returned in terminal
 
-# room for improvement
+# docker
 
-- Settings get set to binairy mode(formula's base number set to 2) at start of each call. Even when input is a hex value.
-- O(n2) nested array in inputHandler.js
+//install
+get the image from hub.docker.com/happysoft88/bin-hex-calculator. 
+in commandline type:
+- $docker pull happysoft88/bin-hex-calculator
+
+Create a container from image.
+- $docker run --init -it happysoft88/bin-hex-calculator
+
+//use
+If you want to launch the app by starting a container be sure to use --interactive tag.
+- $docker start --interavtive [container name | ID]

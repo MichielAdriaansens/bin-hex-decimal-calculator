@@ -3,7 +3,7 @@ const { setBinary, setHexadecimal } = require('../settings');
 const hexLetters = ['A', 'B', 'C', 'D', 'E', 'F'];
 
 function InputHandler(rawUserInput) {
-    let userInput = String(rawUserInput).trim().toUpperCase();
+    let userInput = String(rawUserInput).trim().toUpperCase().replaceAll(' ', '');
 
     let inputSorted = getInputArray(userInput);
 
@@ -11,10 +11,16 @@ function InputHandler(rawUserInput) {
 }
 
 function getInputArray(input) {
+
     setBinary();
 
     //const newArr = Array.from(String(input), Number);
     let newArr = input.toString().split('');
+
+    //checks if user wants to quit app
+    if (newArr.length === 1 && newArr[0].toLowerCase() === 'q') {
+        process.exit();
+    }
 
     //remove the hex number indicator.. '0x'
     if (newArr[0] === '0' && newArr[1] === 'X') {
